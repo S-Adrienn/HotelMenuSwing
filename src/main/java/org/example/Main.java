@@ -1,6 +1,8 @@
 package org.example;
 
+import org.example.business.CustomerService;
 import org.example.business.HotelService;
+import org.example.persistence.CustomerDaoPostgresImpl;
 import org.example.persistence.HotelDaoPostgresImpl;
 import org.example.presentation.HotelController;
 import org.example.presentation.HotelModel;
@@ -11,6 +13,9 @@ public class Main {
         HotelService service = new HotelService(new HotelDaoPostgresImpl());
 //        service.update("   '; DROP table cars_tmp;update persons set adress ='aaaa' WHERE ''='", "adddress");
         HotelModel model = new HotelModel(service.getAllHotels());
+
+        CustomerService customerService = new CustomerService(new CustomerDaoPostgresImpl());
+        customerService.getAllCustomers();
 
         HotelView view = new HotelView(model.getHotelList());
 

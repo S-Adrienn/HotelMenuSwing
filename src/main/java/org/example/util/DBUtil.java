@@ -16,6 +16,6 @@ public class DBUtil {
         }
     }
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/project", "postgres", "root");
+        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/project", "postgres", "Vladinho27");
     }
 }
